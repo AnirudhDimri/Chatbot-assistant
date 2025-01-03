@@ -18,9 +18,9 @@ Question: {question}
 Answer: 
 """
 
-public_key = st.secrets["ollama"]["public_key"]
+public_key = st.secrets["ollama"]["private_key"]
 
-model = OllamaLLM(model="llama3", public_key=public_key)
+model = OllamaLLM(model="llama3", private_key=private_key)
 prompt = ChatPromptTemplate.from_template(template)
 chain = prompt | model
 
